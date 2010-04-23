@@ -68,6 +68,8 @@ conf.registerChannelValue(ChannelLogger, 'filenameTimestamp',
     for the timestamp are in the time.strftime docs at python.org.  In order
     for your logs to be rotated, you'll also have to enable
     supybot.plugins.ChannelLogger.rotateLogs."""))
+conf.registerChannelValue(ChannelLogger,'ignoreChannels',
+    registry.String('##rothbard',"""Determines which channels to ignore for logging."""))
 
 conf.registerGlobalValue(ChannelLogger, 'directories',
     registry.Boolean(True, """Determines whether the bot will partition its

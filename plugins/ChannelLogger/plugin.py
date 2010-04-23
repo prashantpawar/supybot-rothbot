@@ -165,6 +165,9 @@ class ChannelLogger(callbacks.Plugin):
     def doLog(self, irc, channel, s, *args):
         if not self.registryValue('enable', channel):
             return
+        ignoredChannels=self.registryValue('ignoreChannels',channel).split(' ')
+        if channel in ignoredChannels:
+            return
         s = format(s, *args)
         channel = self.normalizeChannel(irc, channel)
         log = self.getLog(irc, channel)
