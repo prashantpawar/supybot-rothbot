@@ -1,0 +1,3 @@
+[submodule "plugins/MisesQuotes"]
+	path = plugins/MisesQuotes
+	url = git://github.com/prashantpawar/supybot-misesquotes.git
