@@ -52,6 +52,9 @@ conf.registerChannelValue(Web, 'nonSnarfingRegexp',
     in the database in the channel; URLs matching the regexp given will not be
     snarfed.  Give the empty string if you have no URLs that you'd like to
     exclude from being snarfed."""))
+conf.registerChannelValue(Web, 'ignoreNicks',
+    registry.String(" ", """Determines the nicks who shall be ignored (because 
+    they are bots or other URL Snarfing bots."""))
 
 conf.registerGroup(Web, 'fetch')
 conf.registerGlobalValue(Web.fetch, 'maximum',

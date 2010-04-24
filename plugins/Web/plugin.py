@@ -79,6 +79,9 @@ class Web(callbacks.PluginRegexp):
         channel = msg.args[0]
         if not irc.isChannel(channel):
             return
+        ignoredNicks = self.registryValue('ignoreNicks',channel).split(' ')
+        if msg.nick in ignoredNicks:
+            return
         if callbacks.addressed(irc.nick, msg):
             return
         if self.registryValue('titleSnarfer', channel):
